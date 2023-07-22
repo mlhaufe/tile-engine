@@ -13,10 +13,21 @@ export default {
     },
     mode: 'production',
     module: {
-        rules: [{ test: /\.mts$/, use: 'ts-loader' }]
+        rules: [
+            { test: /\.([cm]?ts|tsx)$/, loader: "ts-loader" },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            }
+        ]
     },
     resolve: {
-        extensions: ['.mts', '.mjs', '.js', '.ts', '.json']
+        extensions: ['.mts', '.mjs', '.js', '.ts', '.json'],
+        extensionAlias: {
+            ".js": [".js", ".ts"],
+            ".cjs": [".cjs", ".cts"],
+            ".mjs": [".mjs", ".mts"]
+        }
     },
     output: {
         clean: true,
