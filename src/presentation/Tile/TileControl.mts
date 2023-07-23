@@ -4,7 +4,7 @@ import { TileRepository } from "../../data/TileRepository.mjs";
 import { TilePresenter } from "./TilePresenter.mjs";
 
 export class TileControl extends Control {
-    override accessor presenter = new TilePresenter();
+    override accessor presenter = new TilePresenter(document.body);
     override accessor repository = new TileRepository();
     override accessor useCase = new RenderTile(this.presenter, this.repository);
 
