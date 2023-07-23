@@ -1,10 +1,10 @@
 import { TileControl } from "./presentation/Tile/TileControl.mjs";
-import { TileEngineControl } from "./presentation/TileEngine/TileEngineControl.mjs";
+import { ApplicationControl } from "./presentation/ApplicationControl.mjs";
 
-const tileEngine = new TileEngineControl(
-    new TileControl(0, 64),
-    new TileControl(1, 64),
-    new TileControl(2, 64)
+const tileEngine = new ApplicationControl(
+    new TileControl(0),
+    new TileControl(1),
+    new TileControl(2)
 );
 
 tileEngine.start()

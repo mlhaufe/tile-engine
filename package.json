@@ -15,6 +15,7 @@
     "author": "Michael L Haufe <tno@thenewobjective.com> (https://thenewobjective.com)",
     "license": "AGPL-3.0-only",
     "devDependencies": {
+        "@types/node": "^20.4.4",
         "html-webpack-plugin": "^5.5.3",
         "ts-loader": "^9.4.4",
         "typescript": "^5.1.6",

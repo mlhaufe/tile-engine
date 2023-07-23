@@ -1,3 +1,3 @@
-export abstract class Presenter<T> {
-    abstract present(model: T): void;
+export interface Presenter<T> {
+    present(model: T): void;
 }

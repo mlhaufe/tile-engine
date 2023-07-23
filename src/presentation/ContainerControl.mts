@@ -1,27 +1,27 @@
 import { Control } from "../application/Control.mjs";
 
-export abstract class ContainerControl extends Control<void> {
-    #children: Control<any>[] = [];
+export abstract class ContainerControl extends Control {
+    #children: Control[] = [];
 
-    constructor(...children: Control<any>[]) {
-        super()
+    constructor(...children: Control[]) {
+        super();
         children.forEach(child => this.addChild(child));
     }
 
-    get children(): Control<any>[] {
+    get children(): Control[] {
         return this.#children.slice();
     }
 
-    addChild(child: Control<any>): void {
+    addChild(child: Control): void {
         this.#children.push(child);
         child.parent = this;
     }
 
-    removeChild(child: Control<any>): void {
+    removeChild(child: Control): void {
         const index = this.#children.indexOf(child);
         if (index >= 0) {
             this.#children.splice(index, 1);
-            child.parent = null;
+            child.parent = undefined;
         }
     }
 }
