@@ -1,5 +1,3 @@
-import { Entity } from "../domain/Entity.mjs";
-
-export interface Repository<E extends Entity<any>> {
+export interface Repository<E extends { id: any }> {
     get(id: E['id']): E;
 }
