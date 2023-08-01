@@ -1,9 +1,5 @@
-import { TileControl } from "./presentation/Tile/TileControl.mjs";
+import { TileMapControl } from "./presentation/TileMap/TileMapControl.mjs";
 
-const tiles = [
-    new TileControl(0),
-    new TileControl(1),
-    new TileControl(2)
-]
+const sampleMap = new TileMapControl('sample-1');
 
-tiles.forEach(tile => tile.render())
+sampleMap.render();
