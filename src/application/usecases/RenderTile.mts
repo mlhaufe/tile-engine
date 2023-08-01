@@ -9,8 +9,8 @@ export class RenderTile implements Command<number> {
         readonly repository: Repository<Tile>
     ) { }
 
-    execute(id: number): void {
-        const tile = this.repository.get(id);
+    async execute(id: number): Promise<void> {
+        const tile = await this.repository.get(id);
         this.presenter.present(tile);
     }
 }
